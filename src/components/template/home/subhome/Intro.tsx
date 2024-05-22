@@ -8,8 +8,7 @@ function Intro() {
         <div  className='flex  relative flex-col'>
             <video className='h-[75vh]  w-screen object-cover' src={ASSETS.video} autoPlay loop muted></video> 
             <div className='w-full absolute -bottom-5 flex items-center justify-center '>
-                    hello
-                    <div className=' bg-slate-50 w-9/12'>
+                    <div className=' bg-slate-50 w-full  md:w-9/12'>
                       <form >
             <input type="text" placeholder='Destination' />
             <input type="number" placeholder='Members' />
