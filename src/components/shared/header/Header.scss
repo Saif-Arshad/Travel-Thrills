@@ -7,13 +7,21 @@
 
 .nav {
   display: inline-flex;
-  position: relative;
+  position: absolute;
   overflow: hidden;
+  z-index: 100;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 100%;
   background-color: #fff;
   padding: 0 20px;
   border-radius: 40px;
   box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+
+  @media screen and (max-width:570px) {
+    padding: 0px 10px;
+  }
 }
 
 .nav-item {
@@ -26,7 +34,11 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   position: relative;
-  
+  @media screen and (max-width:570px) {
+    padding: 19px 5px;
+    margin: 0px 0px;
+    font-weight: 300;
+    }
   &:before {
     content: "";
     position: absolute;
@@ -38,6 +50,7 @@
     border-radius: 8px 8px 0 0;
     opacity: 0;
     transition: .3s;
+   
   }
 }
 
@@ -61,6 +74,6 @@
 }
 
 @media (max-width: 580px) {
-  .nav { overflow: auto; }
+  .nav { overflow: hidden; }
 }
 
