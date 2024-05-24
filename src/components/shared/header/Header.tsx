@@ -47,7 +47,7 @@ function Header() {
             <Link
            
               href="/"
-              className=" border-2 border-blue-500 text-black transition-all focus:ring-4 focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none"
+              className=" border-2 hover:text-white hover:bg-[#43B97F] border-[#43B97F] text-black transition-all focus:ring-4 focus:ring-[#43B97F] font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none"
               >
               Join Us
             </Link>
@@ -97,7 +97,7 @@ function Header() {
                 <li key={index}>
                 <Link
                   href={item.link}
-                  className="block py-2 font-semibold pl-3 pr-4 text-gray-700 b rounded lg:bg-transparent lg:hover:text-blue-400 lg:p-0 "
+                  className="block py-2 font-semibold pl-3 pr-4 text-gray-700 b rounded lg:bg-transparent lg:hover:text-[#43B97F] lg:p-0 "
                   aria-current="page"
                 >
 
