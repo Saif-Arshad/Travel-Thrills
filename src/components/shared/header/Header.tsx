@@ -1,120 +1,76 @@
-'use client'
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import {ASSETS} from '../../../../public/Assets'
+'use client';
 
-function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+import './Header.scss';
+import { useEffect, useRef } from 'react';
 
-  const Links = [
-    {
-        name:"Home",
-        link:""
-    },
-    {
-        name:"About",
-        link:"/about"
-    },
-    {
-        name:"Contact",
-        link:"/contact"
-    }
-  ]
+const Header = () => {
+  const indicatorRef = useRef<HTMLSpanElement | null>(null);
+  const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    const items = itemsRef.current;
+    const indicator = indicatorRef.current;
+
+    const handleIndicator = (el: HTMLAnchorElement) => {
+      items.forEach((item) => {
+        if (item) {
+          item.classList.remove('is-active');
+          item.removeAttribute('style');
+        }
+      });
+
+      if (indicator) {
+        indicator.style.width = `${el.offsetWidth}px`;
+        indicator.style.left = `${el.offsetLeft}px`;
+        indicator.style.backgroundColor = el.getAttribute('active-color') || '';
+      }
+
+      el.classList.add('is-active');
+      el.style.color = el.getAttribute('active-color') || '';
+    };
+
+    const handleClick = (e: Event) => handleIndicator(e.target as HTMLAnchorElement);
+
+    items.forEach((item) => {
+      if (item) {
+        item.addEventListener('click', handleClick);
+        if (item.classList.contains('is-active')) {
+          handleIndicator(item);
+        }
+      }
+    });
+
+    // Cleanup event listeners on unmount
+    return () => {
+      items.forEach((item) => {
+        if (item) {
+          item.removeEventListener('click', handleClick);
+        }
+      });
+    };
+  }, []);
 
   return (
-    <div>
-      <nav className="bg-white border-gray-200 py-2.5 ">
-        <div className="flex flex-wrap items-center flex-col sm:flex-row justify-between max-w-screen-xl px-4 mx-auto">
-          <Link href="/" >
-          <Image
-          src={ASSETS.logo}
-          alt="travel the world"
-          height={80}
-          width={80}
-          />
-          </Link>
-          <div className="flex items-center gap-x-12  ml-2 mt-2 sm:mt-0 sm:gap-x-0  sm:ml-0 lg:order-2">
-            <div className="hidden mt-2 mr-4 sm:inline-block">
-              <span></span>
-            </div>
-
-
-            <Link
-           
-              href="/"
-              className=" border-2 hover:text-white hover:bg-[#43B97F] border-[#43B97F] text-black transition-all focus:ring-4 focus:ring-[#43B97F] font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none"
-              >
-              Join Us
-            </Link>
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-              aria-controls="mobile-menu-2"
-              aria-expanded={isMenuOpen ? 'true' : 'false'}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className={`w-6 h-6 ${isMenuOpen ? 'hidden' : ''}`}
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              <svg
-                className={`w-6 h-6 ${isMenuOpen ? '' : 'hidden'}`}
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            className={`${
-              isMenuOpen ? 'block' : 'hidden'
-            } items-center justify-between w-full lg:flex lg:w-auto lg:order-1`}
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-          {
-            Links.map((item,index)=>(
-                <li key={index}>
-                <Link
-                  href={item.link}
-                  className="block py-2 font-semibold pl-3 pr-4 text-gray-700 b rounded lg:bg-transparent lg:hover:text-[#43B97F] lg:p-0 "
-                  aria-current="page"
-                >
-
-                  {item.name}
-                </Link>
-              </li>
-            ))
-          }
-
-              
-             
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <nav className="nav">
+      <a href="#" className="nav-item is-active" active-color="orange" ref={(el) => { itemsRef.current[0] = el; }}>
+        Home
+      </a>
+      <a href="#" className="nav-item" active-color="green" ref={(el) => { itemsRef.current[1] = el; }}>
+        About
+      </a>
+      <a href="#" className="nav-item" active-color="blue" ref={(el) => { itemsRef.current[2] = el; }}>
+        Testimonials
+      </a>
+      <a href="#" className="nav-item" active-color="red" ref={(el) => { itemsRef.current[3] = el; }}>
+        Blog
+      </a>
+      <a href="#" className="nav-item" active-color="rebeccapurple" ref={(el) => { itemsRef.current[4] = el; }}>
+        Contact
+      </a>
+      <span className="nav-indicator" ref={indicatorRef}></span>
+    </nav>
   );
-}
+};
 
 export default Header;

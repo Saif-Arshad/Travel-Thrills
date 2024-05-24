@@ -1,20 +1,25 @@
+"use client"
+
 import React from 'react'
 import {ASSETS} from '../../../../../public/Assets'
 import { BsPersonFill } from "react-icons/bs";
 import { ImLocation } from 'react-icons/im';
 import { IoSearch } from "react-icons/io5";
 import { DatePickerWithRange } from '../../shadcn/DatePicker';
-import { MdAttachMoney } from "react-icons/md";
 
 
 function Intro() {
+  const submitHandler = (e:any)=>{  
+      e.preventDefault()
+      alert("Hello World")
+  }
   return (
     <div className='w-full'> 
         <div  className='flex  relative flex-col'>
-            <video className='h-[75vh]  w-screen object-cover' src={ASSETS.video} autoPlay loop muted></video> 
+            <video className='h-[90vh]  w-screen object-cover' src={ASSETS.video} autoPlay loop muted></video> 
             <div className='w-full absolute -bottom-56  sm:-bottom-20 lg:-bottom-10 flex items-center justify-center '>
                     <div className=' bg-white  shadow-lg  overflow-x-hidden rounded-lg p-4 py-5 w-11/12 lg:w-9/12 '>
-                      <form  className='flex sm:flex-row items-baseline flex-col justify-center gap-y-4  flex-wrap '>
+                      <form onSubmit={submitHandler}  className='flex sm:flex-row items-baseline flex-col justify-center gap-y-4  flex-wrap '>
 
                       <div className="relative ">
               <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none  text-gray-500">
