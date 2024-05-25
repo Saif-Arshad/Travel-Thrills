@@ -1,6 +1,8 @@
 "use client"
 
-import React from 'react'
+import React,{useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {ASSETS} from '../../../../../public/Assets'
 import { BsPersonFill } from "react-icons/bs";
 import { ImLocation } from 'react-icons/im';
@@ -13,6 +15,12 @@ function Intro() {
       e.preventDefault()
       alert("Hello World")
   }
+  useEffect(() => {
+    AOS.init({
+         duration: 800,
+         once: false,
+       })
+ }, [])
   return (
     <div className='w-full'> 
         <div  className='flex  relative flex-col'>
