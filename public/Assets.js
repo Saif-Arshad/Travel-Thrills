@@ -9,4 +9,12 @@ export const ASSETS = {
     asia:"/images/asia.jpg",
     europe:"/images/europe.avif",
     america:"/images/north america.jpg",
+    australia:"/image/australia.jpeg",
+    finland:"/image/finland.jpg",
+    japan:"/image/japan.webp",
+    usa:"/image/joshua-tree-usa.webp",
+    kaung:"/image/kuang-si-falls.jpg",
+    itley:"/image/lake-como-italian-alke.jpg",
+    muchai:"/image/mu-cang-chai.jpg",
+    portugal:"/image/portugal.jpg",
 }

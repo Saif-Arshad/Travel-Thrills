@@ -3,34 +3,45 @@
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
-import styles from './Carousel.module.scss';
+import Image from 'next/image';
+import {ASSETS} from '../../../../public/Assets'
 
 const SwiperComponent = () => {
   const slides = [
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-1.jpg",
-      "title": "Number1",
+      "src": "../../../../public/images/portugal.jpg",
+      "title": "Australia",
     },
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-2.jpg",
-      "title": "Number2",
+      "src": ASSETS.finland,
+      "title": "Finland",
     },
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-2.jpg",
-      "title": "Number3",
+      "src": ASSETS.itley,
+      "title": "Lake como italian",
     },
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-2.jpg",
-      "title": "Number4",
+      "src": ASSETS.japan,
+      "title": "Japan",
     },
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-2.jpg",
-      "title": "Number5",
+      "src": ASSETS.kaung,
+      "title": "Kuang Si Falls",
     },
     {
-      "src": "https://rawcdn.githack.com/SochavaAG/example-mycode/master/pens/swiper/images/foto-n-2.jpg",
-      "title": "Number6",
+      "src": ASSETS.muchai,
+      "title": "Mu Cang Chai",
     },
+    {
+      "src": ASSETS.portugal,
+      "title": "Portugal",
+    },
+    {
+      "src": ASSETS.usa,
+      "title": "Joshua Tree USA",
+    }
+  
+
   ];
 
   const swiperRef = useRef(null);
@@ -42,10 +53,10 @@ const SwiperComponent = () => {
       loop: true,
       loopedSlides: 16,
       speed: 700,
-    //   autoplay: {
-    //     delay: 1500,
-    //     disableOnInteraction: false,
-    //   },
+      // autoplay: {
+      //   delay: 1500,
+      //   disableOnInteraction: false,
+      // },
       centeredSlides: true,
       breakpoints: {
         400: { slidesPerView: 1 },
@@ -64,22 +75,42 @@ const SwiperComponent = () => {
   }, []);
 
   return (
-    <section className="">
+    <section className="overflow-x-hidden">
       <div className="swiper-container" ref={swiperRef}>
         <ul className="swiper-wrapper ag-slide_list">
           {slides.map((slide, index) => (
-            // <li className="swiper-slide ag-slide_item" key={index} data-swiper-autoplay="1500">
             <li className="swiper-slide ag-slide_item" key={index}>
+            {/* <li className="swiper-slide ag-slide_item" key={index} data-swiper-autoplay="1500"> */}
+              <div className="flex flex-col">
+
                <div
-               className="hello"
-               style={{backgroundImage: `url(${slide.src})`}}
+               style={{
+                 height:"220px",
+                margin:"0 44px",
+                borderRadius:"20px",
+                position:"relative",
+              }}
                >
-         <h6 className="text-lg font-bold ">{slide.title}</h6>
-
-
+<Image
+src={slide.src}
+alt={slide.title}
+layout='fill'
+className="object-cover"
+/>
                </div>
-              {/* <img src={slide.src} className={styles.agSlideImg} alt="" /> */}
+              <div
+              className='shadow-xl'
+                style={{
+                  margin:"0 44px",  
+                  height:"100px",
+
+                }}
+              >
+         <h6 className="text-lg mb-8 font-bold ">{slide.title}</h6>
+
+              </div>
          
+                 </div>
              
             </li>
           ))}
