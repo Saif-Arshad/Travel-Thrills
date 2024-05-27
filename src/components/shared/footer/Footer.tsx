@@ -77,11 +77,10 @@ function Footer() {
             Contact Information
           </p>
           <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <p className="hover:opacity-75" > 1on1 Coaching </p>
-            <p className="hover:opacity-75" > Company Review </p>
-            <p className="hover:opacity-75" > Accounts Review </p>
-            <p className="hover:opacity-75" > HR Consulting </p>
-            <p className="hover:opacity-75" > SEO Optimisation </p>
+            <p className="hover:opacity-75" > JL.Cindelaras No.205A </p>
+            <p className="hover:opacity-75" >Pakistan, Punjab Lahore </p>
+            <p className="hover:opacity-75" >+92 3491797803</p>
+            <p className="hover:opacity-75" >saifarshad3344@gmail.com </p>
           </nav>
         </div>
       </div>

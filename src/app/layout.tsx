@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/shared/header/Header";
 import Footer from "@/components/shared/footer/Footer";
 import {Providers} from '@/redux/Provider.redux'
+import { Toaster } from "@/components/ui/sonner"
+ 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <Providers >
+        <Toaster />
         <Header/>
         {children}
         <Footer/>
+        
         </Providers>
         </body>
     </html>
