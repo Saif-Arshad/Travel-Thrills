@@ -3,7 +3,8 @@ import {ASSETS} from '../../../public/Assets'
 import WhyUs from '@/components/template/about/WhyUs'
 import BestPlaces from '@/components/template/home/subhome/BestPlaces'
 import LatestBlog from '@/components/template/home/subhome/LatestBlog'
-
+import AboutTravelTrills from '@/components/template/about/AboutTravelTrills'
+import Slider from '@/components/template/about/carosalAbout/AboutCarousal'
 function page() {
   return (
     <div>
@@ -18,8 +19,10 @@ function page() {
         }
       >
       </div>
+      <Slider/>
 <WhyUs/>
 <BestPlaces/>
+<AboutTravelTrills/>
 <LatestBlog/>
 
     </div>

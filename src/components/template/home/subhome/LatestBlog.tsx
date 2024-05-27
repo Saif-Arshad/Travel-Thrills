@@ -17,9 +17,9 @@ function LatestBlog() {
                 <img 
                   src={item.main_image} 
                   alt={item.heading}
-                  className='rounded-2xl object-cover h-56 w-96 '
+                  className='rounded-2xl object-cover h-56 w-full sm:w-96 '
                 />
-                <div className='w-96'>
+                <div className='w-full sm:w-96'>
                   <h1 className='font-semibold mt-2 text-lg sm:text-xl'>
                     {item.heading}
                   </h1>

@@ -38,7 +38,7 @@ const whyUs = [
                     height={150}
                     width={150}
                     ></Image>
-                    <h3 className="font-semibold text-xl ">
+                    <h3 className="font-semibold mt-3 text-xl ">
                         {item.heading}
                     </h3>
                     <p className='text-center my-2'>
