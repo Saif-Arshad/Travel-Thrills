@@ -2,14 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 function BlogCard(props: any) {
-    const { blog, key, layoutClass } = props;
+    console.log(props)
+    const { blog, value } = props;
 
     const splitIndex = blog.description.indexOf('##');
     const previewText = splitIndex !== -1 ? blog.description.slice(0, splitIndex) : blog.description;
 
     return (
-        <div key={key} className={`w-full my-16 gap-6 flex  flex-col md:${layoutClass}`}>
-        
+        <div key={value}
+        className={`w-full my-16 gap-6 flex flex-col md:flex-row`}>
+
             <img 
                 src={blog.main_image} 
                 alt={blog.heading}

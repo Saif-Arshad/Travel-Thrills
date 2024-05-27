@@ -1,24 +1,30 @@
 "use client"
-
 import BlogCard from '@/components/cards/BlogCard';
-import React from 'react';
 import { useSelector } from 'react-redux';
+import React,{useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function AllBlogs() {
     const allBlogs = useSelector((state: any) => state.blogData.allBlogs);
-
+    useEffect(() => {
+        AOS.init({
+             duration: 800,
+             once: false,
+           })
+     }, [])
     return (
         <div className='w-full flex items-center justify-center'>
             <div className='w-10/12 md-9/12  py-5 '>
                 <h1 className='text-2xl md:text-5xl font-extrabold  w-full text-end '>Travel Articles</h1>
 
                 <div className="w-full ">
-                    {allBlogs.map((item: any, index: number) => (
-                        <BlogCard 
-                            key={index} 
-                            blog={item} 
-                            layoutClass={index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} 
-                        />
+                    {allBlogs.map((item: any, index: any) => (
+                            <BlogCard 
+                                key={index} 
+                                value={index}
+                                blog={item} 
+                            />
                     ))}
                 </div>
             </div>

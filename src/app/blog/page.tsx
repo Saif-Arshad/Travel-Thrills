@@ -5,7 +5,7 @@ function page() {
   return (
     <div className="min-h-screen">
       <div
-        className="h-[35vh] w-full flex  items-end "
+        className="h-[45vh] sm:h-[35vh] w-full flex  items-end "
         style={
           {
             backgroundImage:`url(${ASSETS.blog_banner})`,

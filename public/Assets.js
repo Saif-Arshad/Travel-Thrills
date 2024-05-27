@@ -3,7 +3,11 @@ export const ASSETS = {
 
     video:'https://utfs.io/f/71eb9a0e-1214-4254-85f9-c4515eda15f1-a9yobd.mp4',
     logo:'/icon/logo.png',
+    whyus1:'/icon/time.png',
+    whyus2:'/icon/customer.png',
+    whyus3:'/icon/bi_shield-check.png',
     blog_banner:'/images/banner-blog.png',
+    about_banner:'/images/banner-about.png',
     booking1:"/icon/choose-destination.png",
     booking2:"/icon/make-payment.png",
     booking3:"/icon/react-airport.png",
