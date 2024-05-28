@@ -1,26 +1,45 @@
-"use client"
-
-import * as React from "react"
-import { CalendarIcon } from "@radix-ui/react-icons"
-import { addDays, format } from "date-fns"
-import { DateRange } from "react-day-picker"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import * as React from "react";
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { addDays, differenceInDays, format } from "date-fns";
+import { DateRange } from "react-day-picker";
+import { useSelector,useDispatch } from "react-redux"
+import {DATEFROM, DATETO,Days} from '@/redux/feature/Api.Slice'
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 export function DatePickerWithRange({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) {
+  const initialFromDate = new Date();
+  const initialToDate = addDays(new Date(), 10);
+
   const [date, setDate] = React.useState<DateRange | undefined>({
-    from: new Date(2024, 4, 20),
-    to: addDays(new Date(2024, 4, 25), 20),
-  })
+    from: initialFromDate,
+    to: initialToDate,
+  });
+  const dispatch = useDispatch();
+  const {days,dateTo, dateFrom} = useSelector((state:any)=>state.formData)
+  console.log(dateFrom,dateTo,days)
+  const handleDateSelect = (selectedRange:any) => {
+    setDate(selectedRange);
+    dispatch(DATEFROM(selectedRange.from))
+    dispatch(DATETO(selectedRange.to))
+  };
+  console.log(date?.from)
+  console.log(date?.to)
+  
+
+    if (date?.from && date?.to) {
+      const daysDifference = differenceInDays(date.to, date.from);
+      dispatch(Days(daysDifference))
+      console.log(daysDifference)
+    }
 
   return (
     <div className={cn("grid gap-2", className)}>
@@ -28,10 +47,9 @@ export function DatePickerWithRange({
         <PopoverTrigger asChild>
           <Button
             id="date"
-            variant={"outline"}
-            className={
-                cn(
-              "w-[300px] border-none hover:bg-inherit justify-start text-left font-normal",
+            variant={"travelTrills"}
+            className={cn(
+              "w-[300px]  justify-start text-left font-normal",
               !date && "text-muted-foreground"
             )}
           >
@@ -56,11 +74,12 @@ export function DatePickerWithRange({
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={setDate}
+            onSelect={handleDateSelect}
             numberOfMonths={2}
           />
         </PopoverContent>
       </Popover>
+     
     </div>
-  )
+  );
 }

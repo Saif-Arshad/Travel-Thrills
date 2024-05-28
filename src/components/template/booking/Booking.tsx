@@ -44,7 +44,7 @@ Ready to embark on your next adventure? Booking with Travel Thrills is simple an
             <h1 className="text-black mb-3 text-2xl font-semibold">Book A Tour Deals</h1>
             <p className="text-black mb-4">Get <span className="text-[#43B97F] font-semibold">50% Off</span> On Your First Adventure Trip With TravelThrills. Get More Deal Offers Here.</p>
             <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="sm:grid flex flex-col sm:grid-cols-2 gap-3">
                 <div className="flex flex-col-reverse">
                   <input type="text" className="p-2 rounded-xl bg-white border border-gray-200" id="name" placeholder="Your Name" />
                   <label htmlFor="name" className='text-lg mb-2' >Your Name</label>

@@ -24,8 +24,8 @@ function page() {
 <WhyUs/>
 <BestPlaces/>
 <AboutTravelTrills/>
-<LatestBlog/>
 <NewsLetter/>
+<LatestBlog/>
 
     </div>
   )

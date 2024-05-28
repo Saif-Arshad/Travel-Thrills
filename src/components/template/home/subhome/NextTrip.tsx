@@ -51,7 +51,7 @@ function NextTrip() {
  
 
     </div>
-    <div className='w-full lg:w-6/12  items-center justify-center'>
+    <div className='w-full lg:w-6/12 flex items-center justify-center'>
     <Image
         src={ASSETS.trip}
         alt='Book your next trip'
