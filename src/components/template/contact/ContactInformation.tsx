@@ -1,35 +1,41 @@
+"use client"
+
 import React from 'react'
 import ContactUsForm from './ContactUsForm'
+import Message from './Message';
 
 function ContactInformation() {
-    const contactInform=[
-        {
-          "label": "Address",
-          "value": "JL.Cindelaras No.205A"
-        },
-        {
-          "label": "City",
-          "value": "Pakistan, Punjab Lahore"
-        },
-        {
-          "label": "Open",
-          "value": "At 8 AM"
-        },
-        {
-          "label": "Phone",
-          "value": "+92 3491797803"
-        },
-        {
-          "label": "Email",
-          "value": "saifarshad3344@gmail.com"
-        },
-        {
-          "label": "Close",
-          "value": "At 8 PM"
-        }
-      ]
+  const messageFromStorage = localStorage.getItem("message");
+  console.log(messageFromStorage)
+
+    // const contactInform=[
+    //     {
+    //       "label": "Address",
+    //       "value": "JL.Cindelaras No.205A"
+    //     },
+    //     {
+    //       "label": "City",
+    //       "value": "Pakistan, Punjab Lahore"
+    //     },
+    //     {
+    //       "label": "Open",
+    //       "value": "At 8 AM"
+    //     },
+    //     {
+    //       "label": "Phone",
+    //       "value": "+92 3491797803"
+    //     },
+    //     {
+    //       "label": "Email",
+    //       "value": "saifarshad3344@gmail.com"
+    //     },
+    //     {
+    //       "label": "Close",
+    //       "value": "At 8 PM"
+    //     }
+    //   ]
   return (
-    <div className='w-full flex items-center justify-center'>
+    <div className='w-full flex   justify-center'>
       
       <div className="w-11/12 flex flex-col lg:flex-row flex-wrap" >
 
@@ -37,7 +43,7 @@ function ContactInformation() {
 
 <ContactUsForm/>
             </div>
-        <div className='w-full lg:w-6/12 flex flex-col my-4'>
+        <div className='w-full lg:w-6/12 flex items-center justify-start flex-col my-4'>
 
 
         <div className='w-11/12 flex justify-center items-center'>
@@ -47,9 +53,13 @@ function ContactInformation() {
 
             </div>
 
+            {
+
+messageFromStorage ? <Message/> : ""
+}
 
 
-            <div className="w-full flex items-center justify-center">
+            {/* <div className="w-full flex items-center justify-center">
       <div className='w-full flex flex-col mt-3 items-center justify-center'>
         {contactInform.map((item:any, index:any) => (
           <span key={index} className='flex w-full items-center gap-x-5 px-12 my-1'>
@@ -58,11 +68,13 @@ function ContactInformation() {
           </span>
         ))}
       </div>
-    </div>
+    </div> */}
 
 
             </div>
       </div>
+
+        
 
     </div>
   )

@@ -23,6 +23,7 @@ const submitHandler = (value:any,{ resetForm }:any)=>{
     }
     else{
     localStorage.setItem("message",stringValue)
+    window.location.reload()
     }
     resetForm();
 }
