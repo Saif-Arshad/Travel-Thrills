@@ -25,21 +25,19 @@ export function DatePickerWithRange({
   });
   const dispatch = useDispatch();
   const {days,dateTo, dateFrom} = useSelector((state:any)=>state.formData)
-  console.log(dateFrom,dateTo,days)
   const handleDateSelect = (selectedRange:any) => {
     setDate(selectedRange);
     dispatch(DATEFROM(selectedRange.from))
     dispatch(DATETO(selectedRange.to))
-  };
-  console.log(date?.from)
-  console.log(date?.to)
-  
-
     if (date?.from && date?.to) {
       const daysDifference = differenceInDays(date.to, date.from);
       dispatch(Days(daysDifference))
-      console.log(daysDifference)
     }
+  };
+
+  
+
+  
 
   return (
     <div className={cn("grid gap-2", className)}>
