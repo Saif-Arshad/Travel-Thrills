@@ -5,6 +5,7 @@ import BestPlaces from '@/components/template/home/subhome/BestPlaces'
 import LatestBlog from '@/components/template/home/subhome/LatestBlog'
 import AboutTravelTrills from '@/components/template/about/AboutTravelTrills'
 import Slider from '@/components/template/about/carosalAbout/AboutCarousal'
+import NewsLetter from '@/components/template/home/subhome/NewsLetter'
 function page() {
   return (
     <div>
@@ -24,6 +25,7 @@ function page() {
 <BestPlaces/>
 <AboutTravelTrills/>
 <LatestBlog/>
+<NewsLetter/>
 
     </div>
   )

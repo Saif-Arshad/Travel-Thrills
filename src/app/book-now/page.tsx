@@ -1,6 +1,7 @@
 import React from 'react'
 import {ASSETS} from '../../../public/Assets'
 import Booking from '@/components/template/booking/Booking'
+import NewsLetter from '@/components/template/home/subhome/NewsLetter'
 function page() {
   return (
     <div className="min-h-screen">
@@ -21,6 +22,7 @@ function page() {
 
       </div>
       <Booking/>
+      <NewsLetter/>
       </div>
         )
     }

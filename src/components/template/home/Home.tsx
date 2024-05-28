@@ -5,6 +5,7 @@ import AboutUs from './subhome/AboutUs'
 import BestPlaces from './subhome/BestPlaces'
 import NextTrip from './subhome/NextTrip'
 import LatestBlog from './subhome/LatestBlog'
+import NewsLetter from './subhome/NewsLetter'
 function Home() {
   return (
   <>
@@ -13,6 +14,7 @@ function Home() {
 <AboutUs/>
 <BestPlaces/>
 <Destinations/>
+<NewsLetter/>
 <NextTrip/>
 <LatestBlog/>
   </>

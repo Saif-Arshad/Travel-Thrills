@@ -1,6 +1,8 @@
 import React from 'react'
 import {ASSETS} from '../../../public/Assets'
 import ContactInformation from '@/components/template/contact/ContactInformation'
+import NewsLetter from '@/components/template/home/subhome/NewsLetter'
+
 function page() {
    
   return (
@@ -24,6 +26,7 @@ function page() {
 
 
 <ContactInformation/>
+<NewsLetter/>
 
     </div>
   )
