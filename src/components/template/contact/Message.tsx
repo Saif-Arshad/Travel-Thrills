@@ -15,7 +15,6 @@ function Message() {
       console.error("Error parsing message from localStorage:", error);
     }
   }
-  console.log(parseMessage)
   const deleteMessage = ()=>{
     const option = confirm("Ary you really want to delete message")
     if(option){

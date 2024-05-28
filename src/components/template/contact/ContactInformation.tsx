@@ -6,7 +6,6 @@ import Message from './Message';
 
 function ContactInformation() {
   const messageFromStorage = localStorage.getItem("message");
-  console.log(messageFromStorage)
 
     // const contactInform=[
     //     {
