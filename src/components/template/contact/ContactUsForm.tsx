@@ -1,18 +1,11 @@
 "use client"
 
-import React,{useEffect} from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react'
 import { toast } from "sonner"
 import {MessageSend} from '@/Validation/Validation.yup'
 import { useFormik } from 'formik'
 function ContactUsForm() {
-    useEffect(() => {
-        AOS.init({
-             duration: 800,
-             once: false,
-           })
-     }, [])
+ 
 
 
 const submitHandler = (value:any,{ resetForm }:any)=>{

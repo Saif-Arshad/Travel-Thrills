@@ -8,6 +8,7 @@ const initialState = {
    days:null,
    dateTo:null,
    dateFrom:null,
+   clicked:false
    }
    
    export const FormData = createSlice({
@@ -27,10 +28,13 @@ const initialState = {
           DATEFROM(state,action) {
             state.dateFrom=action.payload
           },
+          Button(state,action) {
+            state.clicked=action.payload
+          },
          
       
        },
    
    })
     export default FormData.reducer
-    export const { Destination, Days,DATETO , DATEFROM} = FormData.actions
+    export const { Destination, Days,DATETO , DATEFROM,Button} = FormData.actions

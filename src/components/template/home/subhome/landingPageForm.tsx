@@ -4,27 +4,38 @@ import React ,{useState} from 'react'
 import { IoSearch } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
 import { DatePickerWithRange } from '../../shadcn/DatePicker';
+import {Button} from '@/redux/feature/Api.Slice'
 import { Selector } from '../../shadcn/Selector';
-import { useSelector} from "react-redux"
-import { toast } from "sonner"
+import { useSelector,useDispatch} from "react-redux"
 import { usePathname } from 'next/navigation';
+import { toast } from "sonner"
 export default function LandingPageForm(props:any) {
     const [loading,setloading] = useState(false)
+    const dispatch = useDispatch()
     const router = useRouter()
     const currentPath = usePathname() 
-    const {destination,days,dateTo,
-        dateFrom} = useSelector((state:any)=>state.formData)
-    console.log(destination,days,dateTo,dateFrom)
+    const {destination,days,dateTo,dateFrom,clicked} = useSelector((state:any)=>state.formData)
+    console.log(destination,days,dateTo,dateFrom,clicked)
     const submitHandler = (e:any)=>{  
         e.preventDefault()
         if(!destination || !days || !dateTo || !dateFrom){
-            toast("All fields are required")
+          toast("Both Fields are required")
+          
             return
         }
-        setloading(true)
-        if(currentPath == '/'){
-            router.push(`/trip-plan/${destination}`)
-        }
+        if (currentPath === '/trip-planner') {
+          setloading(true);
+          setTimeout(() => {
+              dispatch(Button(true));
+          }, 2000);
+          
+      } else {
+          dispatch(Button(true));
+          setloading(true);
+          if (currentPath === '/') {
+              router.push('/trip-planner');
+          }
+      }
     }
     
 
@@ -47,7 +58,7 @@ export default function LandingPageForm(props:any) {
 <button type='submit' className="flex flex-row capitalize items-center bg-[#43B97F] p-2 text-white rounded-lg  justify-center">
 <IoSearch  size={23}/>
  
-{loading ? "Getting Data"
+{loading ? "Processing..."
 :'Find trip now'
 }
 </button>

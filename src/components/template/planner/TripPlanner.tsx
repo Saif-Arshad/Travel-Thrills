@@ -7,12 +7,10 @@ import AiPlanner from './AiPlanner';
 
 function TripPlanner() {
   
-     const {destination,days,dateTo,
-        dateFrom} = useSelector((state:any)=>state.formData)
-        const formData = !destination || !days || !dateTo || !dateFrom;
-        console.log(formData)
+     const {destination,days,dateTo,clicked,dateFrom} = useSelector((state:any)=>state.formData)
+        const formData = !destination || !days || !dateTo || !dateFrom || !clicked;
   return (
-    <div className={`w-full flex ${!formData ? 'flex-col' : "flex-col-reverse" } justify-center items-center`}>
+    <div className="w-full flex flex-col justify-center items-center">
 
     <div className='w-11/12'>
    
@@ -28,12 +26,11 @@ function TripPlanner() {
             </div>
             
             :
+            <>
             <AiPlanner/>
+            </>
         }
     </div>
-    <div className='w-11/12'>
-
-</div>
     </div>
   )
 }

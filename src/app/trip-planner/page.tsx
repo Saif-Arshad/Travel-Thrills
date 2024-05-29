@@ -5,7 +5,7 @@ import HeroSection from '@/components/template/heroSection/HeroSection'
 function page() {
   return (
     <div className="min-h-screen">
-      <HeroSection image={ASSETS.planner_banner} title="TravelTrills AI Planner"/>
+      <HeroSection image={ASSETS.planner_banner} title="AI trip Planner"/>
         <TripPlanner />
 
     </div>

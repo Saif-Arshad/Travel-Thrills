@@ -25,6 +25,10 @@ function Header() {
         link:"/blog"
     },
     {
+        name:"AI Trip Planner ",
+        link:"/trip-planner"
+    },
+    {
         name:"Contact",
         link:"/contact-us"
     }
