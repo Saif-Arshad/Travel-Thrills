@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { addDays, differenceInDays, format } from "date-fns";
 import { DateRange } from "react-day-picker";
-import { useSelector,useDispatch } from "react-redux"
-import {DATEFROM, DATETO,Days} from '@/redux/feature/Api.Slice'
+import { useSelector, useDispatch } from "react-redux";
+import { DATEFROM, DATETO, Days } from "@/redux/feature/Api.Slice";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -19,25 +19,30 @@ export function DatePickerWithRange({
   const initialFromDate = new Date();
   const initialToDate = addDays(new Date(), 10);
 
-  const [date, setDate] = React.useState<DateRange | undefined>({
+  const [date, setDate] = useState<DateRange | undefined>({
     from: initialFromDate,
     to: initialToDate,
   });
   const dispatch = useDispatch();
-  const {days,dateTo, dateFrom} = useSelector((state:any)=>state.formData)
-  const handleDateSelect = (selectedRange:any) => {
-    setDate(selectedRange);
-    dispatch(DATEFROM(selectedRange.from))
-    dispatch(DATETO(selectedRange.to))
-    if (date?.from && date?.to) {
-      const daysDifference = differenceInDays(date.to, date.from);
-      dispatch(Days(daysDifference))
-    }
+
+  const handleDateSelect = (selectedRange: any) => {
+    // Update state outside of callback function
+    setDate({
+      from: selectedRange.from,
+      to: selectedRange.to,
+    });
+
+    // Dispatch actions after state update
+    const fromDate = selectedRange.from.toISOString();
+    const toDate = selectedRange.to.toISOString();
+    dispatch(DATEFROM(fromDate));
+    dispatch(DATETO(toDate));
+
+    // if (date?.from && date?.to) {
+    //   const daysDifference = differenceInDays(date.to, date.from);
+    //   dispatch(Days(daysDifference));
+    // }
   };
-
-  
-
-  
 
   return (
     <div className={cn("grid gap-2", className)}>
@@ -77,7 +82,6 @@ export function DatePickerWithRange({
           />
         </PopoverContent>
       </Popover>
-     
     </div>
   );
 }

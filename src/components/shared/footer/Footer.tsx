@@ -46,10 +46,10 @@ function Footer() {
             Company
           </p>
           <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <a className="hover:opacity-75" > Home </a>
-            <a className="hover:opacity-75"> About-Us </a>
-            <a className="hover:opacity-75" > Latest Blogs </a>
-            <a className="hover:opacity-75" > Tour Destinations </a>
+            <Link href={"/"} className="hover:opacity-75" > Home </Link>
+            <Link href={"/about-us"}  className="hover:opacity-75"> About-Us </Link>
+            <Link href={"/blog"} className="hover:opacity-75" > Latest Blogs </Link>
+            <Link href={"/trip-planner"}  className="hover:opacity-75" > Tour Planner </Link>
           </nav>
         </div>
    
@@ -58,9 +58,9 @@ function Footer() {
             Helpful Links
           </p>
           <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <a className="hover:opacity-75" > Contact-Us </a>
-            <a className="hover:opacity-75" > FAQs </a>
-            <a className="hover:opacity-75" >Complain</a>
+            <Link href={"/contact-us"}  className="hover:opacity-75" > Contact-Us </Link>
+            <Link href={"/book-now"}  className="hover:opacity-75" > Booking </Link>
+            <Link href={"/about-us"}  className="hover:opacity-75" >Complain</Link>
           </nav>
         </div>
         <div>
@@ -68,8 +68,8 @@ function Footer() {
             Legal
           </p>
           <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <a className="hover:opacity-75" > Privacy Policy </a>
-            <a className="hover:opacity-75" > Terms &amp; Conditions </a>
+            <Link href={"/privacy"}  className="hover:opacity-75" > Privacy Policy </Link>
+            <Link href={"/privacy"}  className="hover:opacity-75" > Terms &amp; Conditions </Link>
           </nav>
         </div>
         <div>

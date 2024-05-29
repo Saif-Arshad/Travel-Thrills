@@ -14,11 +14,11 @@ export default function LandingPageForm(props:any) {
     const dispatch = useDispatch()
     const router = useRouter()
     const currentPath = usePathname() 
-    const {destination,days,dateTo,dateFrom,clicked} = useSelector((state:any)=>state.formData)
-    console.log(destination,days,dateTo,dateFrom,clicked)
+    const {destination,dateTo,dateFrom,clicked} = useSelector((state:any)=>state.formData)
+    console.log(destination,dateTo,dateFrom,clicked)
     const submitHandler = (e:any)=>{  
         e.preventDefault()
-        if(!destination || !days || !dateTo || !dateFrom){
+        if(!destination  || !dateTo || !dateFrom){
           toast("Both Fields are required")
           
             return
@@ -55,7 +55,7 @@ export default function LandingPageForm(props:any) {
 </div>
 
 <div className="relative ">
-<button type='submit' className="flex flex-row capitalize items-center bg-[#43B97F] p-2 text-white rounded-lg  justify-center">
+<button type='submit' className="flex flex-row ml-4 sm:ml-0 capitalize items-center bg-[#43B97F] p-2 text-white rounded-lg  justify-center">
 <IoSearch  size={23}/>
  
 {loading ? "Processing..."
