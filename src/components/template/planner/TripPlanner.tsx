@@ -1,21 +1,12 @@
 "use client"
 
-import React,{useEffect} from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react'
 import { useSelector} from "react-redux"
 import LandingPageForm from '../home/subhome/landingPageForm';
 import AiPlanner from './AiPlanner';
-import PopularDestinations from './PopularDestinations';
 
-function TripPlanner(props:any) {
-    const country = props.destination;
-    useEffect(() => {
-        AOS.init({
-             duration: 800,
-             once: false,
-           })
-     }, [])
+function TripPlanner() {
+  
      const {destination,days,dateTo,
         dateFrom} = useSelector((state:any)=>state.formData)
         const formData = !destination || !days || !dateTo || !dateFrom;
@@ -42,7 +33,6 @@ function TripPlanner(props:any) {
     </div>
     <div className='w-11/12'>
 
-        <PopularDestinations destination={country} />
 </div>
     </div>
   )

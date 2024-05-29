@@ -6,20 +6,12 @@ import LatestBlog from '@/components/template/home/subhome/LatestBlog'
 import AboutTravelTrills from '@/components/template/about/AboutTravelTrills'
 import Slider from '@/components/template/about/carosalAbout/AboutCarousal'
 import NewsLetter from '@/components/template/home/subhome/NewsLetter'
+import HeroSection from '@/components/template/heroSection/HeroSection'
 function page() {
   return (
     <div>
-      <div
-        className="h-[45vh] sm:h-[35vh] w-full flex  items-end "
-        style={
-          {
-            backgroundImage:`url(${ASSETS.about_banner})`,
-            backgroundSize:"cover",
-            backgroundPosition:"center"
-          }
-        }
-      >
-      </div>
+      <HeroSection image={ASSETS.about_banner}  />
+    
       <Slider/>
 <WhyUs/>
 <BestPlaces/>

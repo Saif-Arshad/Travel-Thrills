@@ -1,18 +1,11 @@
 "use client"
 
-import React,{useEffect} from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react'
 import Link from 'next/link';
 import countries from '@/Data/AllCountry.json'
 import { toast } from "sonner"
 const Booking = () => {
-    useEffect(() => {
-        AOS.init({
-             duration: 800,
-             once: false,
-           })
-     }, [])
+   
 
      const bookNow = (e:any)=>{
         e.preventDefault();
@@ -22,7 +15,7 @@ const Booking = () => {
   return (
     <div className="container-fluid booking py-5">
       <div className="container py-5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 ">
           <div>
             <h5 className="font-bold text-2xl md:text-4xl pe-3 text-[#43B97F]">Booking</h5>
             <h1 className="text-black mb-4">Online Booking</h1>

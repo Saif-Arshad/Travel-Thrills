@@ -16,7 +16,6 @@ function AllBlogs() {
     return (
         <div className='w-full flex items-center justify-center'>
             <div className='w-10/12 md-9/12  py-5 '>
-                <h1 className='text-2xl md:text-5xl font-extrabold  w-full text-end '>Travel Articles</h1>
 
                 <div className="w-full ">
                     {allBlogs.map((item: any, index: any) => (
