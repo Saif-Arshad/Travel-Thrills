@@ -3,7 +3,7 @@
 import React from 'react'
 import { useSelector} from "react-redux"
 import LandingPageForm from '../home/subhome/landingPageForm';
-import AiPlanner from './aiPlanner';
+import AiPlanner from './AiPlanner';
 import AiDestination from './AiDestination';
 
 function TripPlanner() {
