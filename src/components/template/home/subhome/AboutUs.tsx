@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import {ASSETS } from '../../../../../public/Assets'
 function AboutUs() {
   return (
@@ -25,11 +26,17 @@ function AboutUs() {
     <p className='my-3 mt-7 text-lg'>
     At TravelThrills , we&rsquo;re dedicated to turning your travel dreams into reality. Whether you&rsquo;re seeking hidden gems or iconic destinations, our expert guides and personalized recommendations ensure unforgettable experiences. Join our community of explorers and embark on your journey to discover the world&rsquo;s most enchanting places. Let us help you find your perfect getaway!
     </p>
+           
+           {/* className="   bg-[#43B97F]  text-white font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none" */}
+           
+          
+    <Link  href="/book-now">
     <button
-        className='bg-emerald-500 py-3 px-9 font-semibold text-white mt-5 rounded-3xl hover:scale-95 transition-all text-lg'
-    >
+        className='bg-emerald-500 py-3 border-2 px-9 font-semibold text-white mt-5 rounded-3xl  hover:ring-4 hover:ring-[#43B97F]  transition-all text-lg'
+        >
         Book Now
     </button>
+      </Link>
 
     </div>
     </div>

@@ -24,6 +24,9 @@ const Booking = () => {
 Ready to embark on your next adventure? Booking with Travel Thrills is simple and hassle-free. With just a few clicks, you can secure your dream vacation and start counting down the days until departure. Our intuitive platform makes it easy to explore a wide range of destinations, from tropical beaches to bustling cityscapes, ensuring there&rsquo;s something for every type of traveler.
             </p>
             <p className="text-black mb-4">
+            Start by browsing our curated list of destinations and travel packages tailored to suit your interests and budget. Once you&rsquo;ve found your perfect getaway, our seamless booking process allows you to reserve your spot quickly and securely. Choose your preferred travel dates, select from a variety of accommodation options, and add any extra activities or tours to personalize your trip.        
+            </p>
+            <p className="text-black mb-4">
             Don’t wait any longer—your dream vacation is just a few steps away. Book now with Travel Thrills and start planning the adventure of a lifetime!
 </p>
             <Link href="/about-us">
@@ -39,21 +42,21 @@ Ready to embark on your next adventure? Booking with Travel Thrills is simple an
             <form>
               <div className="sm:grid flex flex-col sm:grid-cols-2 gap-3">
                 <div className="flex flex-col-reverse">
-                  <input type="text" className="p-2 rounded-xl bg-white border border-gray-200" id="name" placeholder="Your Name" />
+                  <input type="text" className="p-2 rounded-xl bg-white border border-gray-400" id="name" placeholder="Your Name" />
                   <label htmlFor="name" className='text-lg mb-2' >Your Name</label>
                 </div>
                 <div className="flex flex-col-reverse">
-                  <input type="email" className="p-2 rounded-xl bg-white border border-gray-200" id="email" placeholder="Your Email" />
+                  <input type="email" className="p-2 rounded-xl bg-white border border-gray-400" id="email" placeholder="Your Email" />
                   <label htmlFor="email" className='text-lg mb-2'>Your Email</label>
                 </div>
                 <div className="flex flex-col-reverse">
 
-                  <input type="text" className="p-2 rounded-xl bg-white border border-gray-200" id="datetime" placeholder="Date & Time" />
+                  <input type="text" className="p-2 rounded-xl bg-white border border-gray-400" id="datetime" placeholder="Date & Time" />
                   <label htmlFor="datetime" className='text-lg mb-2'>Date & Time</label>
                 </div>
                 <div className="flex flex-col-reverse">
 
-                  <select  className="p-2 rounded-xl bg-white border border-gray-200" id="select1">
+                  <select  className="p-2 rounded-xl bg-white border border-gray-400" id="select1">
                     {
                         countries.map((item,index)=>(
                     <option value={index} key={index}>{item.countryName}</option>
@@ -65,7 +68,7 @@ Ready to embark on your next adventure? Booking with Travel Thrills is simple an
                 </div>
                 <div className="flex flex-col-reverse">
 
-                  <select  className="p-2 rounded-xl bg-white border border-gray-200" id="SelectPerson">
+                  <select  className="p-2 rounded-xl bg-white border border-gray-400" id="SelectPerson">
                     <option value="1">Persons 1</option>
                     <option value="2">Persons 2</option>
                     <option value="3">Persons 3</option>
@@ -74,7 +77,7 @@ Ready to embark on your next adventure? Booking with Travel Thrills is simple an
                 </div>
                 <div className="flex flex-col-reverse">
 
-                  <select  className="p-2 rounded-xl bg-white border border-gray-200" id="CategoriesSelect">
+                  <select  className="p-2 rounded-xl bg-white border border-gray-400" id="CategoriesSelect">
                     <option value="1">Kids</option>
                     <option value="2">1</option>
                     <option value="3">2</option>
@@ -84,7 +87,7 @@ Ready to embark on your next adventure? Booking with Travel Thrills is simple an
                 </div>
                 <div className="flex flex-col-reverse">
 
-                  <textarea className="p-2 rounded-xl bg-white border border-gray-200" placeholder="Special Request" id="message" style={{ height: '100px' }}></textarea>
+                  <textarea className="p-2 rounded-xl bg-white border border-gray-400" placeholder="Special Request" id="message" style={{ height: '100px' }}></textarea>
                   <label htmlFor="message" className='text-lg mb-2'>Special Request</label>
                 </div>
                 <div className="col-span-2">

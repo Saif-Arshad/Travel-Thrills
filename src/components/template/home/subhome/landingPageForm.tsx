@@ -8,7 +8,7 @@ import { Selector } from '../../shadcn/Selector';
 import { useSelector} from "react-redux"
 import { toast } from "sonner"
 import { usePathname } from 'next/navigation';
-export default function LandingPageForm() {
+export default function LandingPageForm(props:any) {
     const [loading,setloading] = useState(false)
     const router = useRouter()
     const currentPath = usePathname() 
@@ -29,7 +29,7 @@ export default function LandingPageForm() {
     
 
   return (
-    <div className='w-full absolute -bottom-40  sm:-bottom-16 lg:-bottom-10 flex items-center justify-center '>
+    <div className={`w-full ${props.position ? props.position : "absolute" } -bottom-40  sm:-bottom-16 lg:-bottom-10 flex items-center justify-center `}>
     <div className=' bg-white  shadow-lg  overflow-x-hidden rounded-lg  py-5 w-11/12 lg:w-7/12 '>
       <form onSubmit={submitHandler}  className='flex sm:flex-row items-baseline flex-col justify-center gap-y-4  flex-wrap '>
 

@@ -6,6 +6,7 @@ import 'swiper/swiper-bundle.css';
 import {ASSETS} from '../../../../public/Assets'
 import Image from 'next/image';
 import logo from '../../../../public/icon/days.svg'
+import Link from 'next/link';
 
 const SwiperComponent = () => {
   const slides = [
@@ -174,9 +175,23 @@ className="object-cover"
                   style={{
                     margin:"20px 0 ",
                     display:"flex",
+                    alignItems:"center",
+                    justifyContent:"space-between"
+                  }}
+                > 
+                <Link href={`/country-detail/${slide.title}`}>
+                  <button className="capitalize border-2  bg-[#43B97F] text-white transition-all hover:ring-4 hover:ring-[#43B97F] font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">
+                    More about {slide.title}
+                  </button>
+</Link>
+                <div 
+                  style={{
+                    margin:"20px 0 ",
+                    display:"flex",
                     alignItems:"center"
                   }}
                 > 
+
               <Image
                 src={logo}
                 alt="day trip"
@@ -185,11 +200,8 @@ className="object-cover"
               ></Image>
          <h6 className="text-lg font-semibold ml-1 ">{slide.trip}</h6>
          </div>
-         <div>
-                  <button className="capitalize border-2  bg-[#43B97F] border-[#43B97F] text-white transition-all hover:ring-4 hover:ring-[#43B97F] font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">
-                    More about {slide.title}
-                  </button>
          </div>
+  
 
 
               </div>

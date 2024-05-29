@@ -11,8 +11,8 @@ function Footer() {
         <Image
         src={ASSETS.logo}
         alt="logo"
-        height={24}
-        width={54}
+        height={120}
+        width={120}
         className="mr-5" 
         />
         <p className="max-w-xs mt-4 text-sm text-gray-600">

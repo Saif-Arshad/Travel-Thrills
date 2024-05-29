@@ -14,7 +14,7 @@ function HeroSection(props:any) {
      }, [])
     return (
         <div
-        className="h-[45vh] sm:h-[35vh] w-full flex  items-end "
+        className="h-[35vh] w-full flex  items-end "
         style={
           {
             backgroundImage:`url(${image})`,

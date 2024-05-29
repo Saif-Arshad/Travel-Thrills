@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image'
 import {ASSETS } from '../../../../public/Assets'
+import Link from 'next/link';
 function AboutTravelTrills() {
   useEffect(() => {
     AOS.init({
@@ -47,11 +48,13 @@ function AboutTravelTrills() {
         Thank you for choosing Travel Thrills – where your travel dreams become reality.
         </p>
 
-        <button
-            className='bg-emerald-500 py-3 px-9 font-semibold text-white mt-5 rounded-3xl hover:scale-95 transition-all text-lg'
+        <Link  href="/book-now">
+    <button
+        className='bg-emerald-500 py-3 border-2 px-9 font-semibold text-white mt-5 rounded-3xl  hover:ring-4 hover:ring-[#43B97F]  transition-all text-lg'
         >
-            Book Now
-        </button>
+        Book Now
+    </button>
+      </Link>
     
         </div>
         </div>

@@ -19,8 +19,8 @@ function Intro() {
   return (
     <div className='w-full'> 
         <div  className='flex  relative flex-col'>
-            <video className='h-[90vh]  w-screen object-cover' src={ASSETS.video} autoPlay loop muted></video> 
-      <LandingPageForm/>
+            <video className='h-[75vh]  w-screen object-cover' src={ASSETS.video} autoPlay loop muted></video> 
+      <LandingPageForm  postion="absolute" />
             </div>
            
            
