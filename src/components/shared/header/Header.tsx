@@ -29,7 +29,7 @@ function Header() {
         link:"/trip-planner"
     },
     {
-        name:"Contact",
+        name:"Contact Us",
         link:"/contact-us"
     }
   ]

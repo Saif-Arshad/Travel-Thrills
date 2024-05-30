@@ -2,15 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 function BlogCard(props: any) {
-    // console.log(props)
     const { blog, value } = props;
-
+    
     const splitIndex = blog.description.indexOf('##');
     const previewText = splitIndex !== -1 ? blog.description.slice(0, splitIndex) : blog.description;
 
+    const isEven = value % 2 === 0;
+
     return (
         <div key={value}
-        className={`w-full my-16 gap-6 flex flex-col md:flex-row`}>
+        className={`w-full my-16 gap-6 flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''}`}>
 
             <img 
                 src={blog.main_image} 
