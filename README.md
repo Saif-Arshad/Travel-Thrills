@@ -10,7 +10,7 @@ Shadcn components
 
 ## Hosted
 Hosted on Vercel here is link
-https://jsonblogapi.vercel.app/
+https://travelthrills.vercel.app/
 
 
 
