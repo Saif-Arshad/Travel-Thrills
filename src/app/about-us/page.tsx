@@ -13,9 +13,9 @@ function page() {
       <HeroSection image={ASSETS.about_banner}  />
     
       <Slider/>
+<AboutTravelTrills/>
 <WhyUs/>
 <BestPlaces/>
-<AboutTravelTrills/>
 <NewsLetter/>
 <LatestBlog/>
 
