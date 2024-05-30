@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner"
  
 
 export const metadata: Metadata = {
-  title: "Travel Trills - Travel with us ",
+  title: "Travel Thrills - Explore the world with us",
   description: "Travel thrills is a tour agency which provides top notch tour packages",
 };
 
