@@ -7,7 +7,7 @@ import HeroSection from '@/components/template/heroSection/HeroSection';
 
 function page({params}:any) {
     const {slug} = params
-    console.log(slug)
+    // console.log(slug)
     const formatCountryName = (slug:any) => {
       const decodedName = decodeURIComponent(slug);
       return decodedName

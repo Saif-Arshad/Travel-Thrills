@@ -176,7 +176,8 @@ className="object-cover"
                     margin:"20px 0 ",
                     display:"flex",
                     alignItems:"center",
-                    justifyContent:"space-between"
+                    justifyContent:"space-between",
+                    flexWrap:"wrap"
                   }}
                 > 
                 <Link href={`/country-detail/${slide.title}`}>

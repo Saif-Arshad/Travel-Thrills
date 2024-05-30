@@ -6,7 +6,7 @@ import 'swiper/swiper-bundle.css';
 
 const PlannerSlider = (props) => {
   const { data } = props;
-  console.log(data);
+  // console.log(data);
   const swiperRef = useRef(null);
 
   useEffect(() => {

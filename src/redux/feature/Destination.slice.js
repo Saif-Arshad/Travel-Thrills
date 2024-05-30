@@ -9,9 +9,9 @@ const initialState = {
 };
 
 export const destination = createAsyncThunk("popularPlaces", async (formData, { rejectWithValue }) => {
-    console.log(formData)
+    // console.log(formData)
     try {
-        console.log(formData)
+        // console.log(formData)
         const url = `https://travel-info-api.p.rapidapi.com/country?country=${formData}`;
         const options = {
             method: 'GET',
@@ -22,7 +22,7 @@ export const destination = createAsyncThunk("popularPlaces", async (formData, { 
         };
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         return result;
     } catch (error) {
         // Handle error
@@ -43,7 +43,7 @@ const popularDestionation = createSlice({
             state.isLoading = false;
             state.isError = false;
             state.destinationData = action.payload.data;
-            console.log(state.destinationData)
+            // console.log(state.destinationData)
         });
 
         builder.addCase(destination.rejected, (state, action) => {

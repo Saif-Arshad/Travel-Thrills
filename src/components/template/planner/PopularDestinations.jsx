@@ -10,14 +10,14 @@ function PopularDestinations(props) {
     const dispatch = useDispatch();
     const country = props.destination; 
 
-    console.log(country);
+    // console.log(country);
 
     const { destinationData, isLoading, isError } = useSelector((state) => state.popularDestination);
-    console.log(destinationData);
+    // console.log(destinationData);
 
     useEffect(() => {
         dispatch(destination(country));
-        console.log("hello i am working ");
+        // console.log("hello i am working ");
     }, [dispatch, country]);
 
     const formatCountryName = (name) => {
@@ -33,7 +33,7 @@ function PopularDestinations(props) {
     const formattedCountryName = formatCountryName(country);
 
     return (
-        <div className="w-full min-h-[20vh] flex justify-center items-center my-8">
+        <div className="w-full min-h-screen flex justify-center mt-36 items-start my-8">
             {isLoading ? (
                 <Spinner />
             ) : (

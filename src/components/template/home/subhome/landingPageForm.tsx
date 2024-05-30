@@ -15,7 +15,7 @@ export default function LandingPageForm(props:any) {
     const router = useRouter()
     const currentPath = usePathname() 
     const {destination,dateTo,dateFrom,clicked} = useSelector((state:any)=>state.formData)
-    console.log(destination,dateTo,dateFrom,clicked)
+    // console.log(destination,dateTo,dateFrom,clicked)
     const submitHandler = (e:any)=>{  
         e.preventDefault()
         if(!destination  || !dateTo || !dateFrom){

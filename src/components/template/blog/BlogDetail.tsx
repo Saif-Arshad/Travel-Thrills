@@ -8,7 +8,7 @@ function BlogDetail(props: any) {
     const allBlogs = useSelector((state: any) => state.blogData.allBlogs);
     const { id } = props;
     const singleBlog = allBlogs.filter((item: any) => item.id === id);
-    console.log(singleBlog);
+    // console.log(singleBlog);
 
     const processDescription = (description: string) => {
         return description.replace(/##\s*(.*?)(?=\n|$)/g, '<strong>$1</strong>');

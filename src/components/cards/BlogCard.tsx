@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 function BlogCard(props: any) {
-    console.log(props)
+    // console.log(props)
     const { blog, value } = props;
 
     const splitIndex = blog.description.indexOf('##');

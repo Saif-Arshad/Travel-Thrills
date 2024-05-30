@@ -10,7 +10,7 @@ const initialState = {
 export const TourPlanning = createAsyncThunk(
   "planning/fetchTourPlan",
   async (formData, { rejectWithValue }) => {
-    console.log(formData)
+    // console.log(formData)
     try {
       const { destination, days } = formData;
       const url = `https://ai-vacation-planner.p.rapidapi.com/vacationplan/${destination}/${days}/sightseeing,shopping`;
