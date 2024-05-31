@@ -10,7 +10,7 @@ import HeroSection from '@/components/template/heroSection/HeroSection'
 function page() {
   return (
     <div>
-      <HeroSection image={ASSETS.about_banner}  />
+      <HeroSection image={ASSETS.about_banner} title="About Us"  />
     
       <Slider/>
 <AboutTravelTrills/>
