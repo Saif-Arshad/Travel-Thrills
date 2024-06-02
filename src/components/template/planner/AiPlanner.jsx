@@ -6,6 +6,7 @@ import Spinner from '@/components/spinner/Spinner';
 import { Days } from '@/redux/feature/Api.Slice';
 import Link from 'next/link';
 import { differenceInDays } from 'date-fns';
+import TextToSpeech from '@/components/textToSpeech/TextToSpeech';
 
 function AiPlanner() {
   const { destination, days, clicked, dateTo, dateFrom } = useSelector((state) => state.formData);
@@ -66,6 +67,7 @@ function AiPlanner() {
 
   return (
     <div className='w-full mt-6 bg-black flex items-center justify-center'>
+
       {isLoading ? (
         <Spinner />
       ) : isError ? (
@@ -76,7 +78,10 @@ function AiPlanner() {
         </div>
       ) : (
         <div className="w-full">
+          <div className='flex flex-wrap gap-4'> 
+       <TextToSpeech/>
           <h1 className="text-3xl md:text-5xl font-bold text-center my-8 text-black">Tour Plan</h1>
+          </div>
           {tourPlan && tourPlan.itineraryData && Object.entries(tourPlan.itineraryData).map(([day, description]) => (
             <div key={day} className="mb-6">
               <p className='text-lg text-black'>{animatedText[day]}</p>

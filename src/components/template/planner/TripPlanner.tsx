@@ -19,7 +19,7 @@ function TripPlanner() {
             formData ?
             <div>
 
-                <h1 className='text-3xl md:text-5xl font-bold text-center mt-9 '>Plan Your Trip with AI</h1>
+                <h1 className='text-3xl md:text-5xl font-bold text-center mt-9 '>Plan your next trip with AI</h1>
             <div className="relative mt-24">
                 <LandingPageForm />
 
